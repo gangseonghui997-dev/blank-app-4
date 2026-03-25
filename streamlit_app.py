@@ -217,21 +217,9 @@ if st.session_state.drawn_cards:
         
         cards = st.session_state.drawn_cards
         
-        analysis_text = f"""
-        당신은 현재 **{cards[0][0]}**의 기운 아래 서 있으며, 이는 과거의 **{cards[1][0]}** 사건으로부터 기인한 흐름입니다. 
-        이대로 나아간다면 **{cards[2][0]}**의 미래를 맞이할 가능성이 높습니다. 
-        
-        당신의 진정한 속마음은 **{cards[3][0]}**를 향하고 있지만, 외부 환경인 **{cards[4][0]}**가 당신에게 큰 변수로 작용하고 있습니다. 
-        운명은 당신에게 **{cards[5][0]}**의 태도를 가질 것을 조언하고 있으며, 이를 가슴에 새긴다면 최종적으로 **{cards[6][0]}**의 결실을 맺게 될 것입니다.
-        """
+        analysis_text = f"당신은 현재 **{cards[0][0]}**의 기운 아래 서 있으며, 이는 과거의 **{cards[1][0]}** 사건으로부터 기인한 흐름입니다. 이대로 나아간다면 **{cards[2][0]}**의 미래를 맞이할 가능성이 높습니다.\n\n당신의 진정한 속마음은 **{cards[3][0]}**를 향하고 있지만, 외부 환경인 **{cards[4][0]}**가 당신에게 큰 변수로 작용하고 있습니다. 운명은 당신에게 **{cards[5][0]}**의 태도를 가질 것을 조언하고 있으며, 이를 가슴에 새긴다면 최종적으로 **{cards[6][0]}**의 결실을 맺게 될 것입니다."
 
-        st.markdown(f"""
-        <div class="analysis-box">
-            <p style="font-size: 1.1rem; line-height: 1.8; color: #ffffff; white-space: pre-line;">
-                {analysis_text}
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(f'<div class="analysis-box"><p style="font-size: 1.1rem; line-height: 1.8; color: #ffffff; white-space: pre-line;">{analysis_text}</p></div>', unsafe_allow_html=True)
         
         if st.button("🔄 새로운 운명 점치기", use_container_width=True):
             st.session_state.drawn_cards = None
